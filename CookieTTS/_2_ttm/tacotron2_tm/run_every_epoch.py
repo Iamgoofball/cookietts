@@ -12,7 +12,7 @@ current_iteration = iteration
 ## Tacotron2 ##
 ###############
 param_interval = 5# how often this file is ran
-dump_filelosses_interval = 1000# how often to update file_losses.cvs
+dump_filelosses_interval = 250# how often to update file_losses.cvs
 show_live_params = False
 LossExplosionThreshold = 1e3 # maximum loss value (which will trigger a restart from latest checkpoint)
 
@@ -48,7 +48,7 @@ warmup_end   = warmup_start + (A_-warmup_start_lr)*1e5 # warmup will linearly in
 best_model_margin = 0.01 # training loss margin
 
 validation_interval = 125 if iteration < 2000 else (250 if iteration < 8000 else 500)
-checkpoint_interval = 1000#validation_interval
+checkpoint_interval = 250#validation_interval
 
 # Loss Scalars (set to None to load from hparams.py)
 spec_MSE_weight     = 0.0000
