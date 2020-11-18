@@ -128,7 +128,7 @@ def generate_filelist_from_datasets(DATASET_FOLDER,
         if 'speaker' not in defaults[dataset]:
             print(f'default speaker for "{dataset}" dataset is missing.\nPlease enter the name of the default speaker\nExamples: "Nancy", "Littlepip", "Steven"')
             print(f'Press Enter with no input to use "{dataset}"')
-            usr_inp = input('> ')
+            usr_inp = dataset
             if len(usr_inp.strip()) == 0:
                 usr_inp = dataset
             defaults[dataset]['speaker'] = usr_inp
@@ -141,7 +141,7 @@ def generate_filelist_from_datasets(DATASET_FOLDER,
                 print(f'default emotion for "{dataset}" dataset is missing.\nPlease enter the default emotion\nExamples: "Neutral", "Bored", "Audiobook"')
                 if emotion_default is not None:
                     print(f'Press Enter with no input to use "{emotion_default}"')
-                usr_inp = input('> ')
+                usr_inp = "Neutral"
                 assert len(usr_inp.strip()) > 0 or emotion_default, 'No input given!'
                 if len(usr_inp.strip()) > 0:
                     emotion_default = usr_inp.strip()
@@ -152,7 +152,7 @@ def generate_filelist_from_datasets(DATASET_FOLDER,
                 print(f'default noise level for "{dataset}" dataset is missing.\nPlease enter the default noise level\nExamples: "Clean", "Noisy", "Very Noisy"')
                 if noise_level_default is not None:
                     print(f'Press Enter with no input to use "{noise_level_default}"')
-                usr_inp = input('> ')
+                usr_inp = "Clean"
                 assert len(usr_inp.strip()) > 0 or noise_level_default, 'No input given!'
                 if len(usr_inp.strip()) > 0:
                     noise_level_default = usr_inp.strip()
@@ -163,7 +163,7 @@ def generate_filelist_from_datasets(DATASET_FOLDER,
                 print(f'default source for "{dataset}" dataset is missing.\nPlease enter the default source\nExamples: "My Little Pony", "Team Fortress 2", "University of Edinburgh"')
                 if source_default is not None:
                     print(f'Press Enter with no input to use "{source_default}"')
-                usr_inp = input('> ')
+                usr_inp = "Doesnt Matter"
                 assert len(usr_inp.strip()) > 0 or source_default, 'No input given!'
                 if len(usr_inp.strip()) > 0:
                     source_default = usr_inp.strip()
@@ -174,7 +174,7 @@ def generate_filelist_from_datasets(DATASET_FOLDER,
                 print(f'default source type for "{dataset}" dataset is missing.\nPlease enter the default source type\nExamples: "Show", "Audiobook", "Audiodrama", "Game", "Newspaper Extracts"')
                 if source_type_default is not None:
                     print(f'Press Enter with no input to use "{source_type_default}"')
-                usr_inp = input('> ')
+                usr_inp = "Doesnt Matter"
                 assert len(usr_inp.strip()) > 0 or source_type_default, 'No input given!'
                 if len(usr_inp.strip()) > 0:
                     source_type_default = usr_inp.strip()
