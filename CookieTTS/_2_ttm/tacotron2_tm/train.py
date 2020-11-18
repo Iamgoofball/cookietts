@@ -820,7 +820,7 @@ def train(args, rank, group_name, hparams):
                     if iteration%checkpoint_interval==0 or os.path.exists(save_file_check_path):
                         # save model checkpoint like normal
                         if rank == 0:
-                            checkpoint_path = os.path.join(args.output_directory, "checkpoint_{}".format(iteration))
+                            checkpoint_path = os.path.join(args.output_directory, "latest_checkpoint")
                             save_checkpoint(model, optimizer, resGAN, learning_rate, iteration, hparams, best_validation_loss, best_inf_attsc, average_loss, best_val_loss_dict, best_loss_dict, speaker_lookup, speakerlist, checkpoint_path)
                     
                     if iteration%dump_filelosses_interval==0:
